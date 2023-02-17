@@ -16,11 +16,13 @@ def book_appt():
     appointment slot 
     
     """
-    f_name = input("Please enter your first name")
-    l_name = input("Please enter your last name")
+    f_name = input("Please enter your first name:").upper()
+    l_name = input("Please enter your last name: ").upper()
     date = input("Please enter date in yyyy-mm-dd format: ")
-    appointment_slot = [{"First name": f_name}, {"Last name": l_name}, {"Date of appointment"}]
+    appointment_slot = [{"First name": f_name}, {"Last name": l_name}, {"Date of appointment": date}]
                         
     return appointment_slot
 
-    book_appt()
+
+book_appt()
+    
