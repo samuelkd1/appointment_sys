@@ -5,14 +5,13 @@ Created on Sat Feb  4 22:45:57 2023
 
 @author: samkd
 """
-
 from tkinter import *
 
-window = Tk()
+root = Tk()
+root.title("The appointment booking system")
+root.geometry("800x800")
+#root.eval('tk::PlaceWindow . center')
+Label_1 = Label(root, text = "Welcome to the appointment booking admin system\n Please choose your options", font = ("Futuristic", 25))
+Label_1.pack()
 
-L1 = Label(window, text="Full Name")
-L1.pack( side = LEFT)
-E1 = Entry(window, bd =5)
-E1.pack(side = RIGHT)
-
-window.mainloop()
+root.mainloop()
