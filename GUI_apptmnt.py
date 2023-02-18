@@ -15,13 +15,21 @@ root.geometry("800x800")
 Label_1 = Label(root, text = "Welcome to the appointment booking system\n Please choose your options", font = ("Futuristic", 25))
 Label_1.pack()
 
+# create some modes
+
+MODES = ["Book appointment", "See booked appointments", "Edit appointments"]
+selection = StringVar()
+selection.set("Book appointment")
+for text, mode in enumerate(MODES):
+	Radiobutton(root, text = mode, variable = selection, value = mode).pack()
+
+def clicked(value):
+    myLabel = Label(root, text = value)
+    myLabel.pack()
+
 # will make radio buttons
 
-Radiobutton(root, text = "Book appointment").pack()
-Radiobutton(root, text = "See booked appointments").pack()
-Radiobutton(root, text = "Edit appointments").pack()
-
-Button_click = Button(root, text = "select")
+Button_click = Button(root, text = "Select choice", command = lambda: clicked(selection.get()))
 Button_click.pack() 
 
 root.mainloop()
