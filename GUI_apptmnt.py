@@ -22,10 +22,19 @@ selection = StringVar()
 selection.set("Book appointment")
 for text, mode in enumerate(MODES):
 	Radiobutton(root, text = mode, variable = selection, value = mode).pack()
+	
 
 def clicked(value):
-    myLabel = Label(root, text = value)
-    myLabel.pack()
+	global book_window
+	global book_Label
+	if value == "Book appointment":
+		book_window = Toplevel()
+		book_window.title("Book appointment")
+		book_Label = Label(book_window, text = "Please book below").pack()
+		e = Entry(book_window, width = 50).pack()
+		e.delete(0,END)
+
+
 
 # will make radio buttons
 
